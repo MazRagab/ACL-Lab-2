@@ -39,6 +39,10 @@ public class UserController {
         return userService.getUserById(id);
     }
 
+    @GetMapping("/me")
+    public List<User> getMe() throws ResponseStatusException {
+        return userService.getAllUsers();
+    }
     @PostMapping
     public User createUser(@RequestBody User user) {
         return userService.createUser(user);
